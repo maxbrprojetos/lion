@@ -36,7 +36,7 @@ module.exports = function(environment) {
       'font-src':    ["'self'", "data:", "https://fonts.gstatic.com"],
       'connect-src': ["'self'", "http://localhost:3000", "https://as-lion-api.herokuapp.com", "https://as-lion-api-staging.herokuapp.com"],
       'img-src':     ["'self'", "https://avatars.githubusercontent.com"],
-      'style-src':   ["'self'", "'unsafe-inline'", "https://use.fonticons.com"],
+      'style-src':   ["'self'", "'unsafe-inline'", "https://use.fonticons.com", "https://fonts.googleapis.com"],
     }
   };
 
