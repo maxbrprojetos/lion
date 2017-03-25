@@ -39,7 +39,7 @@
     "ember-data": "2.12.1",
     "ember-export-application-global": "2.0.0",
     "ember-graphql-adapter": "0.3.5",
-    "ember-load-initializers": "0.6.3",
+    "ember-load-initializers": "1.0.0",
     "ember-moment": "7.3.0",
     "ember-resolver": "3.0.1",
     "ember-simple-auth": "1.2.1",
