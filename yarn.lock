@@ -2036,9 +2036,9 @@ ember-cli-broccoli-sane-watcher@^2.0.4:
     rsvp "^3.0.18"
     sane "^1.1.1"
 
-ember-cli-content-security-policy@0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-content-security-policy/-/ember-cli-content-security-policy-0.6.0.tgz#5c8fb9f2a721574a296318ada01d1b5771d44411"
+ember-cli-content-security-policy@0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-content-security-policy/-/ember-cli-content-security-policy-0.6.1.tgz#5040088f55213f5cf55839edc2d6039710c9577b"
   dependencies:
     body-parser "^1.12.3"
     chalk "^1.0.0"
