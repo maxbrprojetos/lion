@@ -6,12 +6,12 @@ machine:
 
 test:
   override:
-    - npm test
+    - yarn test
 
 dependencies:
+  cache_directories:
+    - ~/.cache/yarn
   pre:
-    - npm config set spin false
-    - npm install -g bower
+    - yarn global add bower
   override:
-    - npm install
-    - bower install
+    - yarn install
