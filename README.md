@@ -15,34 +15,33 @@ You will need the following things properly installed on your computer.
 
 ```bash
 
-# Install with Homebrew
-$ brew install node
+# Install node and yarn with Homebrew
+$ brew install node yarn
 
 # Bower and ember-cli
-$ npm install -g bower ember-cli
+$ yarn global add bower ember-cli
 ```
 
 ### Setup
 
 * `git clone` this repository
-* `npm install`
-* `bower install`
+* `yarn install`
 
 ## Running
 
 Before running the server make sure you have [lion-api](https://github.com/alphasights/lion-api) running in a separate terminal on `localhost:3000`. You can run the lion-api server with `rails server`.
 
-* `ember server`
+* `yarn start`
 * Visit your app at http://localhost:4200.
 
 ## Running Tests
 
-* `ember test`
-* `ember test --server`
+* `yarn test`
+* `yarn test -- --server`
 
 ## Building
 
-* `ember build`
+* `yarn build`
 
 ## Leaderboard
 
