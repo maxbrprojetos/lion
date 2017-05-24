@@ -9,6 +9,7 @@
   },
   "repository": "https://github.com/alphasights/lion",
   "scripts": {
+    "postinstall": "bower install",
     "build": "ember build",
     "start": "ember server",
     "test": "ember test"
