@@ -2011,6 +2011,20 @@ ember-cli-babel@5.2.4, ember-cli-babel@^5.0.0, ember-cli-babel@^5.1.10, ember-cl
     ember-cli-version-checker "^1.0.2"
     resolve "^1.1.2"
 
+ember-cli-babel@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-6.0.0.tgz#caab075780dca3759982c9f54ea70a9adb1f3550"
+  dependencies:
+    amd-name-resolver "0.0.6"
+    babel-plugin-transform-es2015-modules-amd "^6.24.0"
+    babel-polyfill "^6.16.0"
+    babel-preset-env "^1.2.0"
+    broccoli-babel-transpiler "^6.0.0"
+    broccoli-funnel "^1.0.0"
+    broccoli-source "^1.1.0"
+    clone "^2.0.0"
+    ember-cli-version-checker "^1.2.0"
+
 ember-cli-babel@^6.0.0-beta.7:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-6.1.0.tgz#d9c83a7d0c67cc8a3ccb9bd082971c3593e54fad"
@@ -2434,11 +2448,11 @@ ember-getowner-polyfill@~1.1.1:
     ember-cli-babel "^5.1.6"
     ember-cli-version-checker "^1.2.0"
 
-ember-graphql-adapter@0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/ember-graphql-adapter/-/ember-graphql-adapter-0.3.5.tgz#1fd883623cc27cefd63fe25f4c0bf476bd16ec47"
+ember-graphql-adapter@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/ember-graphql-adapter/-/ember-graphql-adapter-0.4.0.tgz#9b8b1370fab587f1bd758dbb97f7a8650714414b"
   dependencies:
-    ember-cli-babel "5.2.4"
+    ember-cli-babel "6.0.0"
 
 ember-inflector@^1.11.0, ember-inflector@^1.9.4:
   version "1.12.1"
