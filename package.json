@@ -26,7 +26,7 @@
     "ember-cli-htmlbars": "1.2.0",
     "ember-cli-htmlbars-inline-precompile": "0.3.6",
     "ember-cli-inject-live-reload": "1.6.1",
-    "ember-cli-moment-shim": "3.0.1",
+    "ember-cli-moment-shim": "3.3.0",
     "ember-cli-paint": "1.13.7",
     "ember-cli-pretender": "1.0.1",
     "ember-cli-qunit": "3.1.2",
