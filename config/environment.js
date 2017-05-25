@@ -49,6 +49,7 @@ module.exports = function(environment) {
     ENV.apiBaseUrl = 'http://localhost:3000/api/graph';
     ENV.apiAuthUrl = 'http://localhost:3000/api/auth';
     ENV.torii.providers['github-oauth2'].apiKey = '89b25efb23bf241601c0';
+    ENV.torii.providers['github-oauth2'].redirectUri = 'http://localhost:4200/torii/redirect.html';
   }
 
   if (environment === 'test') {
@@ -69,12 +70,14 @@ module.exports = function(environment) {
     ENV.apiBaseUrl = 'https://as-lion-api.herokuapp.com/api/graph';
     ENV.apiAuthUrl = 'https://as-lion-api.herokuapp.com/api/auth';
     ENV.torii.providers['github-oauth2'].apiKey = '743d8bfa4937e587f1f4';
+    ENV.torii.providers['github-oauth2'].redirectUri = 'https://as-lion.herokuapp.com/torii/redirect.html';
   }
 
   if (environment === 'staging') {
     ENV.apiBaseUrl = 'https://as-lion-api-staging.herokuapp.com/api/graph';
     ENV.apiAuthUrl = 'https://as-lion-api-staging.herokuapp.com/api/auth';
     ENV.torii.providers['github-oauth2'].apiKey = 'b332ff88f7abf9bcdff5';
+    ENV.torii.providers['github-oauth2'].redirectUri = 'https://as-lion-staging.herokuapp.com/torii/redirect.html';
   }
 
   return ENV;
