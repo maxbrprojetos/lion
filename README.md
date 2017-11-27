@@ -26,6 +26,7 @@ $ yarn global add bower ember-cli
 
 * `git clone` this repository
 * `yarn install`
+* `cp .example-env .env`
 
 ## Running
 
