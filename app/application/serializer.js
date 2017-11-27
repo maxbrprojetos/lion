@@ -1,7 +1,6 @@
-import Ember from 'ember';
+import { get } from '@ember/object';
+import { underscore } from '@ember/string';
 import { Serializer } from 'ember-graphql-adapter';
-
-const { get, String: { underscore } } = Ember;
 
 export default Serializer.extend({
   concatenatedProperties: [

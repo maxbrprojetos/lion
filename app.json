@@ -1,0 +1,19 @@
+{
+  "name": "lion",
+  "env": {
+    "EMBER_ENV": {
+      "value": "staging"
+    },
+    "REBUILD_ALL": {
+      "required": true
+    }
+  },
+  "addons": [
+    "ssl"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/tonycoco/heroku-buildpack-ember-cli.git"
+    }
+  ]
+}

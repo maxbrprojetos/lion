@@ -1,7 +1,5 @@
-import Ember from 'ember';
+import { get } from '@ember/object';
 import { moduleForModel, test } from 'ember-qunit';
-
-const { get } = Ember;
 
 moduleForModel('weekly-winning', 'Unit | Model | weekly winning', {
   needs: ['model:user']

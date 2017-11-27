@@ -1,7 +1,5 @@
-import Ember from 'ember';
+import { get } from '@ember/object';
 import { moduleFor, test } from 'ember-qunit';
-
-const { get } = Ember;
 
 moduleFor('controller:stats', 'Unit | Controller | stats', {
   needs: []

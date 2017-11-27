@@ -1,8 +1,6 @@
-import Ember from 'ember';
+import { set } from '@ember/object';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
-
-const { set } = Ember;
 
 moduleForComponent('user-avatar', 'Integration | Component | user avatar', {
   integration: true

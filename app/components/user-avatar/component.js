@@ -1,7 +1,5 @@
-import Ember from 'ember';
+import { oneWay } from '@ember/object/computed';
 import TooltipsterComponent from 'ember-cli-tooltipster/components/tool-tipster';
-
-const { computed } = Ember;
 
 export default TooltipsterComponent.extend({
   attributeBindings: ['src', 'alt', 'title'],
@@ -10,7 +8,7 @@ export default TooltipsterComponent.extend({
 
   user: null,
 
-  alt: computed.oneWay('title'),
-  src: computed.oneWay('user.avatarUrl'),
-  title: computed.oneWay('user.name'),
+  alt: oneWay('title'),
+  src: oneWay('user.avatarUrl'),
+  title: oneWay('user.name'),
 });

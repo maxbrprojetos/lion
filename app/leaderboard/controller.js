@@ -1,10 +1,9 @@
-import Ember from 'ember';
-
-const { computed, Controller } = Ember;
+import { sort } from '@ember/object/computed';
+import Controller from '@ember/controller';
 
 export default Controller.extend({
   scores: null,
-  arrangedScores: computed.sort('scores', '_scoresSorting'),
+  arrangedScores: sort('scores', '_scoresSorting'),
 
   _scoresSorting: ['points:desc']
 });

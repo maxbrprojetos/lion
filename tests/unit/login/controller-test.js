@@ -1,7 +1,6 @@
-import Ember from 'ember';
+import { run } from '@ember/runloop';
+import Service from '@ember/service';
 import { moduleFor, test } from 'ember-qunit';
-
-const { run, Service } = Ember;
 
 moduleFor('controller:login', 'Unit | Controller | login', {
   needs: ['service:session']

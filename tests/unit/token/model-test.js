@@ -1,7 +1,5 @@
-import Ember from 'ember';
+import { get } from '@ember/object';
 import { moduleForModel, test } from 'ember-qunit';
-
-const { get } = Ember;
 
 moduleForModel('token', 'Unit | Model | token', {
   needs: ['model:user']

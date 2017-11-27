@@ -1,6 +1,9 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'lion/tests/helpers/module-for-acceptance';
-import { authenticateSession, invalidateSession } from 'lion/tests/helpers/ember-simple-auth';
+import {
+  authenticateSession,
+  invalidateSession
+} from 'lion/tests/helpers/ember-simple-auth';
 import startApp from 'lion/tests/helpers/start-app';
 import destroyApp from 'lion/tests/helpers/destroy-app';
 import Pretender from 'pretender';

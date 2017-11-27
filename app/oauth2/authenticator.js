@@ -1,11 +1,12 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import { isEmpty } from '@ember/utils';
+import { get } from '@ember/object';
+import RSVP from 'rsvp';
 import Authenticator from 'ember-simple-auth/authenticators/oauth2-password-grant';
 
-const { get, inject, RSVP } = Ember;
-
 export default Authenticator.extend({
-  store: inject.service(),
-  torii: inject.service(),
+  store: service(),
+  torii: service(),
 
   refreshAccessTokens: false,
 
@@ -18,7 +19,7 @@ export default Authenticator.extend({
         const expiresIn = get(response, 'expiresIn');
         const expiresAt = this._absolutizeExpirationTime(expiresIn);
         this._scheduleAccessTokenRefresh(expiresIn, expiresAt);
-        if (!Ember.isEmpty(expiresAt)) {
+        if (!isEmpty(expiresAt)) {
           data = {
             'access_token': accessToken,
             'expires_at': expiresAt,

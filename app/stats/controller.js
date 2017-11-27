@@ -1,11 +1,10 @@
-import Ember from 'ember';
-
-const { computed, Controller } = Ember;
+import { sort } from '@ember/object/computed';
+import Controller from '@ember/controller';
 
 export default Controller.extend({
   model: null,
 
-  categoryStats: computed.sort('model', '_countSorting'),
+  categoryStats: sort('model', '_countSorting'),
 
   _countSorting: ['count:desc']
 });

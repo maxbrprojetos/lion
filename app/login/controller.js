@@ -1,9 +1,9 @@
-import Ember from 'ember';
-
-const { Controller, get, inject } = Ember;
+import { inject as service } from '@ember/service';
+import Controller from '@ember/controller';
+import { get } from '@ember/object';
 
 export default Controller.extend({
-  session: inject.service(),
+  session: service(),
 
   actions: {
     authenticateWithGithub() {
