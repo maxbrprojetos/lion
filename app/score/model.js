@@ -4,5 +4,5 @@ const { attr, belongsTo, Model } = DS;
 
 export default Model.extend({
   points: attr('number'),
-  user: belongsTo('user', { async: false })
+  user: belongsTo('user', { async: true })
 });
