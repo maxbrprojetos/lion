@@ -45,6 +45,8 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.usingGithubAuth = !!ENV.torii.providers['github-oauth2'].apiKey;
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

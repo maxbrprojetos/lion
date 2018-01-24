@@ -6,7 +6,7 @@ moduleFor('controller:login', 'Unit | Controller | login', {
   needs: ['service:session']
 });
 
-test('it sorts the scores in descending order of points', function(assert) {
+test('it calls authenticate with the right arguments', function(assert) {
   assert.expect(2);
 
   const sessionStub = Service.create({
@@ -14,12 +14,12 @@ test('it sorts the scores in descending order of points', function(assert) {
       assert.equal(
         authenticator,
         'authenticator:oauth2',
-        'expected to autneticate using the oauth2 authenticator'
+        'expected to authenticate using the oauth2 authenticator'
       );
       assert.equal(
         provider,
-        'github-oauth2',
-        'expected to autneticate via the github provider'
+        'dev',
+        'expected to authenticate via the specified provider'
       );
     }
   });
@@ -28,6 +28,6 @@ test('it sorts the scores in descending order of points', function(assert) {
   controller.session = sessionStub;
 
   run(() => {
-    controller.send('authenticateWithGithub');
+    controller.send('authenticate', 'dev');
   });
 });

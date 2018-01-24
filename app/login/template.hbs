@@ -36,7 +36,8 @@
       </svg>
       <h1>Lion</h1>
       <h3>Gamification for your Dev Team</h3>
-      <button class="github github-login" {{action "authenticateWithGithub"}}>
+      <button class="github github-login"
+        {{action "authenticate" (if usingGithubAuth "github-oauth2" "dev")}}>
         Sign in with GitHub
       </button>
     </div>
