@@ -1,0 +1,6 @@
+mutation tokenCreate($code: String!) {
+  token: token_create(code: $code) {
+    accessToken: access_token
+    expiresIn: expires_in
+  }
+}

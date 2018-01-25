@@ -3,17 +3,18 @@ import { isEmpty } from '@ember/utils';
 import { get } from '@ember/object';
 import RSVP from 'rsvp';
 import Authenticator from 'ember-simple-auth/authenticators/oauth2-password-grant';
+import mutation from 'lion/mutations/token-create';
 
 export default Authenticator.extend({
-  store: service(),
+  auth: service(),
   torii: service(),
 
   refreshAccessTokens: false,
 
   authenticate(provider) {
     return this._fetchOauthData(provider).then(code => {
-      let token = get(this, 'store').createRecord('token', { code });
-      return token.save().then(response => {
+      const variables = { code };
+      return get(this, 'auth').mutate({ mutation, variables }, 'token').then(response => {
         let data = {};
         const accessToken = get(response, 'accessToken');
         const expiresIn = get(response, 'expiresIn');
