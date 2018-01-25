@@ -1,0 +1,47 @@
+<h3>
+  <span>{{user.nickname}}</span>
+  <a href={{user.githubUrl}} target="_blank">
+    <span class="github-handle"></span>
+  </a>
+  <span>{{totalScore}}</span>
+</h3>
+
+{{#link-to "score-breakdown" user.id (query-params week=previousWeek)}}
+  Previous Week
+{{/link-to}}
+
+{{#if week}}
+  {{#link-to "score-breakdown" user.id (query-params week=nextWeek)}}
+    Next Week
+  {{/link-to}}
+{{/if}}
+
+<ul>
+{{#each (sort-by "createdAt:asc" scores) as |score|}}
+  <li>
+    <span>
+      {{moment-format score.createdAt "MMMM Do YYYY"}}
+    </span>
+    <span>
+      {{if score.review "Reviewed" "Merged"}}
+    </span>
+    <span>
+      <a href={{score.pullRequest.url}} target="_blank">
+        {{score.pullRequest.name}}#{{score.pullRequest.number}}
+      </a>
+    </span>
+    with
+    <span>
+      {{score.pullRequest.additions}} additions
+    </span>
+    and
+    <span>
+      {{score.pullRequest.deletions}} deletions
+    </span>
+    for a total of
+    <span>
+      {{score.points}}
+    </span>
+  </li>
+{{/each}}
+</ul>

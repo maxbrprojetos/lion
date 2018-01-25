@@ -40,7 +40,7 @@ module.exports = function(environment) {
       'script-src':  ["'self'"],
       'font-src':    ["'self'", "data:", "https://fonts.gstatic.com"],
       'connect-src': ["'self'", "http://localhost:3000", "https://lion-api.alphasights.com"],
-      'img-src':     ["'self'", "https://avatars.githubusercontent.com"],
+      'img-src':     ["'self'", "https://avatars.githubusercontent.com", "https://robohash.org"],
       'style-src':   ["'self'", "'unsafe-inline'", "https://use.fonticons.com", "https://fonts.googleapis.com"],
     }
   };
