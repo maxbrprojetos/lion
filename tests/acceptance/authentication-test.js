@@ -6,10 +6,9 @@ import {
 } from 'lion/tests/helpers/ember-simple-auth';
 import startApp from 'lion/tests/helpers/start-app';
 import destroyApp from 'lion/tests/helpers/destroy-app';
-import Pretender from 'pretender';
+import fetchMock from 'lion/helpers/fetch-mock';
 
 let application;
-let server;
 
 moduleForAcceptance('Acceptance | authentication', {
   beforeEach() {
@@ -17,19 +16,13 @@ moduleForAcceptance('Acceptance | authentication', {
   },
 
   afterEach() {
-    server.shutdown();
+    fetchMock.restore();
     destroyApp(application);
   }
 });
 
 test('visiting the app while logged in', function(assert) {
-  server = new Pretender(function(){
-    this.post('/api/graph', () => {
-      return [200, {'Content-Type': 'application/json'}, JSON.stringify({
-        data: { scores: [] }
-      })];
-    });
-  });
+  fetchMock.post('/api/graph', { data: { scores: [] } });
 
   authenticateSession(application);
 

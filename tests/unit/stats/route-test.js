@@ -1,7 +1,7 @@
 import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('route:stats', 'Unit | Route | stats', {
-  needs: []
+  needs: ['service:apollo', 'service:session']
 });
 
 test('it exists', function(assert) {

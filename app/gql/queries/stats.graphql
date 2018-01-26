@@ -1,0 +1,12 @@
+query stats($category: String!) {
+  stats(category: $category) {
+    id
+    count
+    user {
+      id
+      avatarUrl: avatar_url
+      name
+      nickname
+    }
+  }
+}

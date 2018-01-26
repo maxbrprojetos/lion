@@ -1,0 +1,12 @@
+query scores($span: String!) {
+  scores(time_span: $span) {
+    id
+    points
+    user {
+      id
+      avatarUrl: avatar_url
+      name
+      nickname
+    }
+  }
+}

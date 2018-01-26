@@ -1,0 +1,13 @@
+query weeklyWinnings {
+  weeklyWinnings: weekly_winnings {
+    id
+    points
+    startDate: start_date
+    winner {
+      id
+      avatarUrl: avatar_url
+      name
+      nickname
+    }
+  }
+}

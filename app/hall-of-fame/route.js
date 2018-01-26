@@ -1,8 +1,9 @@
-import { get } from '@ember/object';
 import Route from '@ember/routing/route';
+import RouteQueryManager from "ember-apollo-client/mixins/route-query-manager";
+import query from "lion/gql/queries/hall-of-fame";
 
-export default Route.extend({
+export default Route.extend(RouteQueryManager, {
   model() {
-    return get(this, 'store').findAll('weeklyWinning');
+    return this.apollo.watchQuery({ query }, 'weeklyWinnings')
   }
 });

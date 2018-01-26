@@ -1,7 +1,7 @@
 import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('route:leaderboard', 'Unit | Route | leaderboard', {
-  needs: []
+  needs: ['service:apollo', 'service:session']
 });
 
 test('it exists', function(assert) {

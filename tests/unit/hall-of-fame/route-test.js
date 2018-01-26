@@ -1,7 +1,7 @@
 import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('route:hall-of-fame', 'Unit | Route | hall of fame', {
-  needs: []
+  needs: ['service:apollo', 'service:session']
 });
 
 test('it exists', function(assert) {
