@@ -5,7 +5,7 @@
 .number {
   font-weight: 400;
 
-  &.-additions { color: #3D9970; }
-  &.-deletions { color: #FF4136; }
-  &.-points { color: #0074D9; }
+  &--additions { color: #3D9970; }
+  &--deletions { color: #FF4136; }
+  &--points { color: #0074D9; }
 }
