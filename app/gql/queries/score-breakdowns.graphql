@@ -10,6 +10,7 @@ query scoreBreakdowns($user_id: ID!, $week: Int!) {
       deletions
       name
       number
+      title
       user {
         id
         avatarUrl: avatar_url

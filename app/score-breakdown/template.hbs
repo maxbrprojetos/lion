@@ -1,47 +1,60 @@
-<h3>
-  <span>{{user.nickname}}</span>
-  <a href={{user.githubUrl}} target="_blank">
-    <span class="github-handle"></span>
-  </a>
-  <span>{{totalScore}}</span>
-</h3>
+<div class="score-breakdowns">
+  <h3>
+    <span>{{user.nickname}}</span>
+    <a href={{user.githubUrl}} target="_blank">
+      <span class="github-handle"></span>
+    </a>
+    <span>{{totalScore}}</span>
+  </h3>
 
-{{#link-to "score-breakdown" user.id (query-params week=previousWeek)}}
-  Previous Week
-{{/link-to}}
+  <div>
+    {{#link-to "score-breakdown" user.id (query-params week=previousWeek)}}
+      Previous Week
+    {{/link-to}}
+    ||
+    {{#if week}}
+      {{#link-to "score-breakdown" user.id (query-params week=nextWeek)}}
+        Next Week
+      {{/link-to}}
+    {{else}}
+      Next Week
+    {{/if}}
+  </div>
 
-{{#if week}}
-  {{#link-to "score-breakdown" user.id (query-params week=nextWeek)}}
-    Next Week
-  {{/link-to}}
-{{/if}}
-
-<ul>
-{{#each (sort-by "createdAt:asc" scores) as |score|}}
-  <li>
-    <span>
-      {{moment-format score.createdAt "MMMM Do YYYY"}}
-    </span>
-    <span>
-      {{if score.review "Reviewed" "Merged"}}
-    </span>
-    <span>
-      <a href={{score.pullRequest.url}} target="_blank">
-        {{score.pullRequest.name}}#{{score.pullRequest.number}}
-      </a>
-    </span>
-    with
-    <span>
-      {{score.pullRequest.additions}} additions
-    </span>
-    and
-    <span>
-      {{score.pullRequest.deletions}} deletions
-    </span>
-    for a total of
-    <span>
-      {{score.points}}
-    </span>
-  </li>
-{{/each}}
-</ul>
+  <ul class="pull-request-list">
+    {{#each (sort-by "createdAt:asc" scores) as |score|}}
+      <li class="pull-request">
+        <span>
+          {{moment-format score.createdAt "MMM Do YYYY"}}
+        </span>
+        |
+        <span>
+          {{if score.review "Reviewed" "Merged"}}
+        </span>
+        |
+        <span class="pull-request__title">
+          {{score.pullRequest.title}}
+        </span>
+        -
+        <span>
+          <a href={{concat 'https://github.com/' score.pullRequest.name '/pull/' score.pullRequest.number}} target="_blank" class="link">
+            {{score.pullRequest.name}}#{{score.pullRequest.number}}
+          </a>
+        </span>
+        |
+        <span class="pull-request__number pull-request__number--additions">
+          + {{score.pullRequest.additions}}
+        </span>
+        |
+        <span class="pull-request__number pull-request__number--deletions">
+          - {{score.pullRequest.deletions}}
+        </span>
+        |
+        <span class="pull-request__number pull-request__number--points">
+          {{score.points}}
+        </span>
+        pts
+      </li>
+    {{/each}}
+  </ul>
+</div>
