@@ -18,7 +18,7 @@
 
 <ul>
 {{#each (sort-by "createdAt:asc" scores) as |score|}}
-  <li>
+  <li class="pull_request">
     <span>
       {{moment-format score.createdAt "MMMM Do YYYY"}}
     </span>
@@ -27,21 +27,22 @@
     </span>
     <span>
       <a href={{score.pullRequest.url}} target="_blank">
-        {{score.pullRequest.name}}#{{score.pullRequest.number}}
+       {{score.pullRequest.title}} - {{score.pullRequest.name}}#{{score.pullRequest.number}}
       </a>
     </span>
-    with
-    <span>
-      {{score.pullRequest.additions}} additions
+    |
+    <span class="number -additions">
+      + {{score.pullRequest.additions}}
     </span>
-    and
-    <span>
-      {{score.pullRequest.deletions}} deletions
+    |
+    <span class="number -deletions">
+      - {{score.pullRequest.deletions}}
     </span>
-    for a total of
-    <span>
+    |
+    <span class="number -points">
       {{score.points}}
     </span>
+    points
   </li>
 {{/each}}
 </ul>
