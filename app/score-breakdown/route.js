@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
-import { set } from '@ember/object';
+import { isEmpty } from '@ember/utils';
+import { get, set } from '@ember/object';
 import RouteQueryManager from "ember-apollo-client/mixins/route-query-manager";
 import scoreBreakdownQuery from "lion/gql/queries/score-breakdowns";
 
@@ -17,9 +18,10 @@ export default Route.extend(RouteQueryManager, {
   setupController(controller, model) {
     set(controller, 'scores', model);
 
-    const users = model.mapBy('user');
-    const { user_id } = this.paramsFor('score-breakdown');
-
-    set(controller, 'user', users.findBy('id', user_id));
+    if (isEmpty(get(controller, 'user'))) {
+      const users = model.mapBy('user');
+      const { user_id } = this.paramsFor('score-breakdown');
+      set(controller, 'user', users.findBy('id', user_id));
+    }
   },
 });
