@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { set } from '@ember/object';
+import { setProperties } from '@ember/object';
 import RouteQueryManager from "ember-apollo-client/mixins/route-query-manager";
 import scoreBreakdownQuery from "lion/gql/queries/score-breakdowns";
 
@@ -11,13 +11,13 @@ export default Route.extend(RouteQueryManager, {
   },
 
   model(params) {
-    return this.apollo.watchQuery({ query: scoreBreakdownQuery, variables: params }, 'scoreBreakdowns');
+    return this.apollo.watchQuery({ query: scoreBreakdownQuery, variables: params });
   },
 
   setupController(controller, model) {
-    set(controller, 'scores', model.scores);
-
-    delete model.scores
-    set(controller, 'user', model);
+    setProperties(controller, {
+      scores: model.scores,
+      user: model.user
+    });
   },
 });

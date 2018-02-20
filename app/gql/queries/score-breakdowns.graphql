@@ -1,22 +1,23 @@
 query scoreBreakdowns($user_id: ID!, $week: Int!) {
-  scoreBreakdowns: user(id: $user_id) {
+  user(id: $user_id) {
     id
     avatarUrl: avatar_url
     name
     nickname
-    scores: score_breakdowns(week: $week) {
+  }
+
+  scores: score_breakdowns(user_id: $user_id, week: $week) {
+    id
+    createdAt: created_at
+    points
+    review
+    pullRequest: pull_request {
       id
-      createdAt: created_at
-      points
-      review
-      pullRequest: pull_request {
-        id
-        additions
-        deletions
-        name
-        number
-        title
-      }
+      additions
+      deletions
+      name
+      number
+      title
     }
   }
 }
