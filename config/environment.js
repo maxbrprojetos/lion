@@ -25,6 +25,7 @@ module.exports = function(environment) {
 
     apiBaseUrl: process.env.API_BASE_URL,
     apiAuthUrl: process.env.API_AUTH_URL,
+    webSocketUrl: process.env.WEB_SOCKET_URL,
 
     torii: {
       providers: {
@@ -39,7 +40,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'script-src':  ["'self'"],
       'font-src':    ["'self'", "data:", "https://fonts.gstatic.com"],
-      'connect-src': ["'self'", "http://localhost:3000", "https://lion-api.alphasights.com"],
+      'connect-src': ["'self'", process.env.WEB_SOCKET_URL, "http://localhost:3000", "https://lion-api.alphasights.com/cable"],
       'img-src':     ["'self'", "https://avatars.githubusercontent.com", "https://robohash.org"],
       'style-src':   ["'self'", "'unsafe-inline'", "https://use.fonticons.com", "https://fonts.googleapis.com"],
     }

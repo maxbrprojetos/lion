@@ -14,7 +14,7 @@
       <h3>Top 5</h3>
       <div class="scores">
         {{#each arrangedScores as |score|}}
-          {{user-performance user=score.user points=score.points linkable=true}}
+          {{user-performance user=score.user points=score.points isNew=score.isNew linkable=true}}
         {{/each}}
       </div>
     </div>

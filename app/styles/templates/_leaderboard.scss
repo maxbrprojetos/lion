@@ -59,8 +59,8 @@ $avatar-size: 40px;
       padding: $column-gutter / 2 $column-gutter;
       transition:
         background-color $global-transition-duration ease,
-        transform $global-transition-duration ease-in-out,
-        box-shadow $global-transition-duration ease;
+        box-shadow $global-transition-duration ease,
+        transform $global-transition-duration ease-in-out;
 
       &:nth-child(-n+5) {
         width: 20%;
@@ -135,6 +135,14 @@ $avatar-size: 40px;
       float: right;
       font-weight: $font-weight-bold;
       color: color(gray, jet);
+
+      transition:
+        color $global-transition-duration ease-in-out,
+        font-size $global-transition-duration ease-in-out;
+    }
+
+    .new .points {
+      color: #00da5e;
     }
   }
 }
