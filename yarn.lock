@@ -2627,6 +2627,12 @@ ember-browserify@^1.2.1:
     through2 "^2.0.0"
     walk-sync "^0.2.7"
 
+ember-cable@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/ember-cable/-/ember-cable-0.6.2.tgz#7106c9952bfdfe2081b98fbce34699be65f39110"
+  dependencies:
+    ember-cli-babel "^5.1.6"
+
 ember-cli-app-version@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-app-version/-/ember-cli-app-version-3.1.0.tgz#074b0330581a7b8ab094ff07fefb34e0d0254bfd"
