@@ -1,0 +1,42 @@
+$wrapper-max-width: 800px;
+$avatar-size: 40px;
+
+.feed {
+  padding: $column-gutter;
+  position: absolute;
+  top: $layout-sidebar-header-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media #{$small-only} {
+    padding: $column-gutter / 2;
+
+    .nickname {
+      font-size: $h5-font-size;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-size: $h1-font-size;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: $column-gutter;
+  }
+
+  .pull-requests {
+    max-width: $wrapper-max-width;
+    margin: 0 auto;
+
+    .pull-request {
+      color: black;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

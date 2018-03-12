@@ -1,0 +1,19 @@
+<div class="avatar">{{user-avatar user=user}}</div>
+<div class="info">
+  <div class="summary">
+    <span class="nickname">{{user.nickname}}</span> merged <a href={{concat 'https://github.com/' repo '/pull/' number}} target="_blank" class="title">{{title}}</a>.
+  </div>
+  <div class="details">
+    <span class="details--{{repo}}">{{repo}}</span>|
+    <span>{{moment-format pullRequest.createdAt "hh:mm a MMM Do YYYY"}}</span>
+  </div>
+</div>
+
+<div class="statistics">
+  <div class="number number--points">{{points}}</div>
+  <div class="number">
+    <span class="number--additions">+ {{additions}}</span>
+    /
+    <span class="number--deletions">- {{deletions}}</span>
+  </div>
+</div>

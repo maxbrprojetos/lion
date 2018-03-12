@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('authenticated', { path: '/', resetNamespace: true }, function() {
+    this.route('feed', { resetNamespace: true });
     this.route('hall-of-fame', { resetNamespace: true });
     this.route('leaderboard', { path: 'leaderboard/:time_span', resetNamespace: true });
     this.route('score-breakdown', { path: 'score-breakdown/:user_id', resetNamespace: true });

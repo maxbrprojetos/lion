@@ -6,29 +6,28 @@
   max-width: 80rem;
   padding: 1rem;
 }
-
 .github-handle {
   @include icon(github, before);
 }
 
 .pull-request-list {
   padding-top: 1rem;
-}
 
-.pull-request {
-  color: #9E9E9E;
-  flex-direction: row;
+  .pull-request {
+    color: #9E9E9E;
+    flex-direction: row;
 
-  &__title {
-    color: black;
-    font-weight: 400;
-  }
+    &__title {
+      color: black;
+      font-weight: 400;
+    }
 
-  &__number {
-    font-weight: 400;
+    &__number {
+      font-weight: 400;
 
-    &--additions { color: #3D9970; }
-    &--deletions { color: #FF4136; }
-    &--points { color: #0074D9; }
+      &--additions { color: #3D9970; }
+      &--deletions { color: #FF4136; }
+      &--points { color: #0074D9; }
+    }
   }
 }

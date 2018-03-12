@@ -1,0 +1,54 @@
+.pull-request {
+  padding: $column-gutter / 2 $column-gutter;
+  transition: background-color $global-transition-duration ease;
+
+  &:nth-child(2n) {
+    background-color: color(gray, ghost);
+  }
+
+  &:hover {
+    background-color: #d9f2ff;
+  }
+
+  .avatar {
+    background-color: color(gray, smoke);
+    width: 3em;
+    border-radius: 50%;
+    height: 3em;
+    text-align: center;
+    overflow: hidden;
+    display: block;
+  }
+
+  .info {
+    padding-left: 1rem;
+    flex-grow: 2;
+
+    .summary {
+      align-content: flex-end;
+
+      .nickname {
+        font-weight: 400;
+      }
+    }
+    .details {
+      color: darkgray;
+
+      &--pistachio { color: #93B19A; }
+      &--phoenix { color: #b19993; }
+    }
+  }
+
+  .statistics {
+    flex-direction: column;
+
+    .number {
+      color: darkgray;
+      font-weight: 400;
+
+      &--additions { color: #3D9970; }
+      &--deletions { color: #FF4136; }
+      &--points { text-align: right; color: #0074D9; }
+    }
+  }
+}

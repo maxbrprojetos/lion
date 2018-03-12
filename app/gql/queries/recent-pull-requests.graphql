@@ -1,0 +1,20 @@
+query recentPullRequests($limit: Int) {
+  pullRequests: recent_pull_requests(limit: $limit) {
+    id
+    additions
+    createdAt: created_at
+    deletions
+    name
+    number
+    title
+    user {
+      id
+      avatarUrl: avatar_url
+      name
+      nickname
+    }
+    score {
+      points
+    }
+  }
+}

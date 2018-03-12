@@ -1,0 +1,13 @@
+{{outlet}}
+<div class="feed">
+  <header>
+    <h1>Recent Pull Requests</h1>
+  </header>
+  <section class="content">
+    <div class="pull-requests">
+      {{#each model as |pr|}}
+        {{pull-request pullRequest=pr}}
+      {{/each}}
+    </div>
+  </section>
+</div>
