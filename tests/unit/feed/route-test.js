@@ -1,8 +1,7 @@
 import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('route:feed', 'Unit | Route | feed', {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['service:apollo', 'service:session']
 });
 
 test('it exists', function(assert) {
